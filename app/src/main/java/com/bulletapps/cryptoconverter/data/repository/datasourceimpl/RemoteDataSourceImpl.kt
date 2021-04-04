@@ -5,7 +5,7 @@ import com.bulletapps.cryptoconverter.data.model.APIResponse
 import com.bulletapps.cryptoconverter.data.repository.datasource.RemoteDataSource
 import retrofit2.Response
 
-class remoteDataSourceImpl(
+class RemoteDataSourceImpl(
     private val geckoAPIService: GeckoAPIService
 ):RemoteDataSource {
     override suspend fun getCryptoS(ids: String, vsCurrencies: String): Response<APIResponse> {
