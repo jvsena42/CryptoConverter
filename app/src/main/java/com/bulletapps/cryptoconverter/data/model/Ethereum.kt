@@ -5,7 +5,7 @@ import com.google.gson.annotations.SerializedName
 
 data class Ethereum(
     @SerializedName("ars")
-    var ars: Int?,
+    var ars: Double?,
     @SerializedName("brl")
     var brl: Double?,
     @SerializedName("eur")
@@ -13,7 +13,7 @@ data class Ethereum(
     @SerializedName("last_updated_at")
     var lastUpdatedAt: Int?,
     @SerializedName("mxn")
-    var mxn: Int?,
+    var mxn: Double?,
     @SerializedName("usd")
     var usd: Double?
 )

@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">Crypto Converter</string>
     <string name="convert">Convert</string>
+    <string name="error_no_internet">Error: No internet connection</string>
 </resources>

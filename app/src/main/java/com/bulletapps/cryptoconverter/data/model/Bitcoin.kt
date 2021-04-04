@@ -5,15 +5,15 @@ import com.google.gson.annotations.SerializedName
 
 data class Bitcoin(
     @SerializedName("ars")
-    var ars: Int?,
+    var ars: Double?,
     @SerializedName("brl")
-    var brl: Int?,
+    var brl: Double?,
     @SerializedName("eur")
-    var eur: Int?,
+    var eur: Double?,
     @SerializedName("last_updated_at")
     var lastUpdatedAt: Int?,
     @SerializedName("mxn")
-    var mxn: Int?,
+    var mxn: Double?,
     @SerializedName("usd")
-    var usd: Int?
+    var usd: Double?
 )

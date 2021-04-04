@@ -1,4 +1,4 @@
-package com.bulletapps.newsapp.data.util
+package com.bulletapps.cryptoconverter.data.util
 
 sealed class Resource<T>(
     val data: T? = null,
