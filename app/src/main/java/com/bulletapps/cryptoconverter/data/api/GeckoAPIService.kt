@@ -7,7 +7,7 @@ import retrofit2.http.Query
 
 interface GeckoAPIService {
 
-    @GET("v2/top-headlines")
+    @GET("simple/price")
     suspend fun getCryptoValues(
         @Query("ids")
         ids:String,

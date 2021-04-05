@@ -1,5 +1,8 @@
 package com.bulletapps.cryptoconverter.data.util
 
+import android.content.ClipData
+import android.content.ClipboardManager
+import android.content.Context
 import android.graphics.Color
 import android.view.View
 import android.widget.ImageView
@@ -40,5 +43,11 @@ fun View.snackBarWithAction(message : String, actionLabel : String,
             .setAction(actionLabel) {
                 block()
             }
+}
+
+fun Context.copyToClipboard(text: CharSequence){
+    val clipboard = getSystemService(ClipboardManager::class.java)
+    val clip = ClipData.newPlainText("label",text)
+    clipboard.setPrimaryClip(clip)
 }
 

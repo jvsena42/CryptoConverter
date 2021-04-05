@@ -1,9 +1,11 @@
 package com.bulletapps.cryptoconverter.data
 
 import com.bulletapps.cryptoconverter.data.model.APIResponse
+import com.bulletapps.cryptoconverter.data.model.ErrorModel
 import com.bulletapps.cryptoconverter.data.repository.datasource.RemoteDataSource
 import com.bulletapps.cryptoconverter.domain.repository.CryptoRepository
 import com.bulletapps.cryptoconverter.data.util.Resource
+import com.google.gson.Gson
 import retrofit2.Response
 
 class CryptoRepositoryImpl(private val remoteDataSource: RemoteDataSource):CryptoRepository {
@@ -17,6 +19,7 @@ class CryptoRepositoryImpl(private val remoteDataSource: RemoteDataSource):Crypt
                 return Resource.Success(result)
             }
         }
-        return Resource.Error(response.message())
+        val message = Gson().fromJson(response.errorBody()?.string(), ErrorModel::class.java)
+        return Resource.Error(message.error.toString())
     }
 }

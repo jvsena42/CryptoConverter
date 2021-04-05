@@ -3,4 +3,5 @@
     <string name="convert">Convert</string>
     <string name="error_no_internet">Error: No internet connection</string>
     <string name="enter_valid_number">Please, enter a valid number</string>
+    <string name="value_copied_clipboard">Value copied to the clipboard</string>
 </resources>

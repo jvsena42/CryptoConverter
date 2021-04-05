@@ -7,12 +7,10 @@ import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bulletapps.cryptoconverter.R
+import com.bulletapps.cryptoconverter.data.listener.ItemClickListener
+import com.bulletapps.cryptoconverter.data.util.*
 import com.bulletapps.cryptoconverter.data.util.Constants.CRYPTO_ID
 import com.bulletapps.cryptoconverter.data.util.Constants.MAIN_FIAT
-import com.bulletapps.cryptoconverter.data.util.Resource
-import com.bulletapps.cryptoconverter.data.util.showSnackbarRed
-import com.bulletapps.cryptoconverter.data.util.viewGone
-import com.bulletapps.cryptoconverter.data.util.viewVisible
 import com.bulletapps.cryptoconverter.databinding.ActivityMainBinding
 import com.bulletapps.cryptoconverter.presentation.adapter.CryptoAdapter
 import com.bulletapps.cryptoconverter.presentation.viewmodel.MainActivityViewModel
@@ -68,8 +66,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun validation() {
-        val value = binding.tieValue.text.toString().toDouble()
-        if (value<=0){
+        val valueText = binding.tieValue.text
+        if (valueText.isNullOrEmpty()){
             binding.tilValue.error = getString(R.string.enter_valid_number)
         }else{
             binding.tilValue.error = null
@@ -87,5 +85,12 @@ class MainActivity : AppCompatActivity() {
         binding.rvValues.adapter = adapter
         binding.rvValues.setHasFixedSize(true)
         binding.rvValues.layoutManager = LinearLayoutManager(this)
+        adapter.attachListener(object :ItemClickListener<String> {
+            override fun onClick(item: String) {
+                binding.root.showSnackbar(getString(R.string.value_copied_clipboard))
+                copyToClipboard(item)
+            }
+
+        })
     }
 }
