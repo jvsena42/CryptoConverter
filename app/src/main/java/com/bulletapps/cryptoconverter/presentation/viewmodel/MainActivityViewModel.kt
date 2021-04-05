@@ -35,13 +35,13 @@ class MainActivityViewModel(
         }
     }
 
-    fun createList(apiResult: Resource<APIResponse>): MutableList<CryptoModel> {
+    fun createList(apiResult: APIResponse?): MutableList<CryptoModel> {
         val listValues: MutableList<CryptoModel> = mutableListOf()
         listValues.clear()
-        listValues.add(CryptoModel("BTC", apiResult.data?.bitcoin?.ars, apiResult.data?.bitcoin?.brl, apiResult.data?.bitcoin?.eur, apiResult.data?.bitcoin?.mxn, apiResult.data?.bitcoin?.usd, apiResult.data?.bitcoin?.lastUpdatedAt))
-        listValues.add(CryptoModel("ETH", apiResult.data?.ethereum?.ars, apiResult.data?.ethereum?.brl, apiResult.data?.ethereum?.eur, apiResult.data?.ethereum?.mxn, apiResult.data?.ethereum?.usd, apiResult.data?.ethereum?.lastUpdatedAt))
-        listValues.add(CryptoModel("LTC", apiResult.data?.litecoin?.ars, apiResult.data?.litecoin?.brl, apiResult.data?.litecoin?.eur, apiResult.data?.litecoin?.mxn, apiResult.data?.litecoin?.usd, apiResult.data?.litecoin?.lastUpdatedAt))
-        listValues.add(CryptoModel("NANO", apiResult.data?.nano?.ars, apiResult.data?.nano?.brl, apiResult.data?.nano?.eur, apiResult.data?.nano?.mxn, apiResult.data?.nano?.usd, apiResult.data?.nano?.lastUpdatedAt))
+        listValues.add(CryptoModel("BTC", apiResult?.bitcoin?.ars, apiResult?.bitcoin?.brl, apiResult?.bitcoin?.eur, apiResult?.bitcoin?.mxn, apiResult?.bitcoin?.usd, apiResult?.bitcoin?.lastUpdatedAt))
+        listValues.add(CryptoModel("ETH", apiResult?.ethereum?.ars, apiResult?.ethereum?.brl, apiResult?.ethereum?.eur, apiResult?.ethereum?.mxn, apiResult?.ethereum?.usd, apiResult?.ethereum?.lastUpdatedAt))
+        listValues.add(CryptoModel("LTC", apiResult?.litecoin?.ars, apiResult?.litecoin?.brl, apiResult?.litecoin?.eur, apiResult?.litecoin?.mxn, apiResult?.litecoin?.usd, apiResult?.litecoin?.lastUpdatedAt))
+        listValues.add(CryptoModel("NANO", apiResult?.nano?.ars, apiResult?.nano?.brl, apiResult?.nano?.eur, apiResult?.nano?.mxn, apiResult?.nano?.usd, apiResult?.nano?.lastUpdatedAt))
         return listValues
     }
 }
