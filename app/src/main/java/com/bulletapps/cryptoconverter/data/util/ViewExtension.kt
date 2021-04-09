@@ -17,12 +17,16 @@ import com.google.android.material.snackbar.Snackbar
         .into(this)
     }*/
 
-fun View.viewGone(){
-    this.visibility = View.GONE
-}
-
 fun View.viewVisible(){
     this.visibility = View.VISIBLE
+}
+
+fun View.viewInvisible(){
+    this.visibility = View.INVISIBLE
+}
+
+fun View.viewGone(){
+    this.visibility = View.GONE
 }
 
 // Snackbar Extensions
