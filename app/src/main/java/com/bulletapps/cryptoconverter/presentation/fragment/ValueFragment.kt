@@ -9,11 +9,15 @@ import android.widget.ArrayAdapter
 import androidx.navigation.fragment.findNavController
 import com.bulletapps.cryptoconverter.R
 import com.bulletapps.cryptoconverter.databinding.FragmentValueBinding
+import com.bulletapps.cryptoconverter.presentation.activity.MainActivity
+import com.bulletapps.cryptoconverter.presentation.viewmodel.MainActivityViewModel
 
 
 class ValueFragment : Fragment() {
 
     private lateinit var binding: FragmentValueBinding
+    private lateinit var mViewModel: MainActivityViewModel
+
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
@@ -24,6 +28,7 @@ class ValueFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding = FragmentValueBinding.bind(view)
+        mViewModel = (activity as MainActivity).mainViewModel
 
         initDropdown()
         onClick()
@@ -51,6 +56,10 @@ class ValueFragment : Fragment() {
         }
 
         if (binding.tilFiats.error.isNullOrEmpty() && binding.tilValue.error.isNullOrEmpty()){
+
+            mViewModel.amount = valueText.toString().toDouble()
+            mViewModel.currency = fiat.toString()
+
             findNavController().navigate(R.id.action_valueFragment_to_resultFragment)
         }
     }

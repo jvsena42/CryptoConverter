@@ -19,6 +19,8 @@ class MainActivityViewModel(
         private val getCryptoValuesUseCase: GetCryptoValuesUseCase
 ):AndroidViewModel(app) {
     val listCrypto:MutableLiveData<Resource<APIResponse>> = MutableLiveData()
+    var amount:Double = 0.0
+    var currency:String = ""
 
     fun getValues(ids:String,vsCurrencies:String) = viewModelScope.launch(Dispatchers.IO) {
         listCrypto.postValue(Resource.Loading())
