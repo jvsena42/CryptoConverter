@@ -13,63 +13,16 @@
         android:background="@color/gray"
         tools:context=".presentation.activity.MainActivity">
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/til_value"
-            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/fragment"
+            android:name="androidx.navigation.fragment.NavHostFragment"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
-            android:layout_marginTop="32dp"
-            android:layout_marginEnd="24dp"
+            android:layout_height="match_parent"
+            app:defaultNavHost="true"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:suffixText="USD">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/tie_value"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/white_text"
-                android:hint="0.00"
-                android:inputType="numberDecimal"
-                android:singleLine="true" />
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/bt_convert"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="24dp"
-            android:text="@string/convert"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/til_value" />
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rv_values"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_marginTop="8dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/bt_convert"
-            tools:listitem="@layout/list_cryptos"/>
-
-        <ProgressBar
-            android:id="@+id/progressBar"
-            style="?android:attr/progressBarStyle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:indeterminateTint="@color/yellow"
-            android:visibility="gone"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/bt_convert"
-            tools:visibility="visible" />
+            app:navGraph="@navigation/nav_main" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

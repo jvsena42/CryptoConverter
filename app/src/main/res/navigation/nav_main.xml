@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/nav_main"
+    app:startDestination="@id/valueFragment">
+
+    <fragment
+        android:id="@+id/valueFragment"
+        android:name="com.bulletapps.cryptoconverter.presentation.fragment.ValueFragment"
+        android:label="ValueFragment" >
+        <action
+            android:id="@+id/action_valueFragment_to_resultFragment"
+            app:destination="@id/resultFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/resultFragment"
+        android:name="com.bulletapps.cryptoconverter.presentation.fragment.ResultFragment"
+        android:label="ResultFragment" />
+</navigation>

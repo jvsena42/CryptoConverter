@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
+import androidx.navigation.fragment.findNavController
 import com.bulletapps.cryptoconverter.R
 import com.bulletapps.cryptoconverter.databinding.FragmentValueBinding
 
@@ -50,7 +51,7 @@ class ValueFragment : Fragment() {
         }
 
         if (binding.tilFiats.error.isNullOrEmpty() && binding.tilValue.error.isNullOrEmpty()){
-            //findNavController().navigate(R.id.action_additionalHeightFragment_to_additionalWeightFragment)
+            findNavController().navigate(R.id.action_valueFragment_to_resultFragment)
         }
     }
 

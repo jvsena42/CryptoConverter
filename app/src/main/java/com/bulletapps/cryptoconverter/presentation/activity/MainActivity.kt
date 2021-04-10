@@ -32,13 +32,13 @@ class MainActivity : AppCompatActivity() {
         viewModel = ViewModelProvider(this,factory).get(MainActivityViewModel::class.java)
         binding = DataBindingUtil.setContentView(this,R.layout.activity_main)
 
-        initRecyclerView()
-        onClick()
+//        initRecyclerView()
+//        onClick()
         observe()
     }
 
     private fun observe() {
-        viewModel.listCrypto.observe(this, {
+       /* viewModel.listCrypto.observe(this, {
             when(it){
                 is Resource.Loading->{
                     binding.progressBar.viewVisible()
@@ -56,10 +56,10 @@ class MainActivity : AppCompatActivity() {
                     }
                 }
             }
-        })
+        })*/
     }
 
-    private fun onClick() {
+   /* private fun onClick() {
         binding.btConvert.setOnClickListener {
             validation()
         }
@@ -92,5 +92,5 @@ class MainActivity : AppCompatActivity() {
             }
 
         })
-    }
+    }*/
 }
