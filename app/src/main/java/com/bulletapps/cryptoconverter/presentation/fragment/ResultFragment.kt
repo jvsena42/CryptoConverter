@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.bulletapps.cryptoconverter.R
 import com.bulletapps.cryptoconverter.data.listener.ItemClickListener
 import com.bulletapps.cryptoconverter.data.util.*
@@ -17,6 +18,9 @@ import com.bulletapps.cryptoconverter.presentation.activity.MainActivity
 import com.bulletapps.cryptoconverter.presentation.adapter.CryptoAdapter
 import com.bulletapps.cryptoconverter.presentation.viewmodel.MainActivityViewModel
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @AndroidEntryPoint
@@ -45,6 +49,22 @@ class ResultFragment : Fragment() {
         getValues()
         observe()
         updateTextView()
+
+        GlobalScope.launch {
+            onRefresh()
+        }
+    }
+
+    private suspend fun onRefresh() {
+        GlobalScope.launch {
+            delay(1500)
+
+            binding.srLayout.setOnRefreshListener {
+                getValues()
+                binding.srLayout.isRefreshing = false
+            }
+        }
+
     }
 
     private fun updateTextView() {
