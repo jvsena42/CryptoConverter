@@ -64,7 +64,7 @@ class CryptoAdapter:RecyclerView.Adapter<CryptoAdapter.NewsViewHolder>() {
                 }
             }
 
-            val valueString = "%,8f".format(value).replace(",",".",true)
+            val valueString = "%.8f".format(value).replace(",",".",true)
 
             binding.tvValue.text = valueString
             binding.btCopy.setOnClickListener {
