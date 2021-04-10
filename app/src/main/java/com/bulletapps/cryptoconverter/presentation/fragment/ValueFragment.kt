@@ -30,8 +30,12 @@ class ValueFragment : Fragment() {
         binding = FragmentValueBinding.bind(view)
         mViewModel = (activity as MainActivity).mainViewModel
 
-        initDropdown()
         onClick()
+    }
+
+    override fun onResume() {
+        super.onResume()
+        initDropdown()
     }
 
     private fun onClick() {
