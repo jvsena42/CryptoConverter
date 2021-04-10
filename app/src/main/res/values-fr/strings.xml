@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="convert">Convertir</string>
+    <string name="enter_valid_number">S\'il vous plait, entrez un nombre valide</string>
+    <string name="value_copied_clipboard">Valeur copiée dans le presse-papiers</string>
+    <string name="please_select_currency">s\'il vous plaît, sélectionnez une devise</string>
+    <string name="error_no_internet">Erreur: pas de connexion Internet</string>
+</resources>

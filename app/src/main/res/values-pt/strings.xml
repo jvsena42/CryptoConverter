@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="convert" translatable="false">Converter</string>
+    <string name="error_no_internet">Erro: Por favor, verifique sua conexão</string>
+    <string name="enter_valid_number">Por favor, digite um número válido</string>
+    <string name="value_copied_clipboard">Valor copiado para a área de transferência</string>
+    <string name="please_select_currency">Por favor, escolha uma moeda</string>
+</resources>
