@@ -5,4 +5,5 @@
     <string name="value_copied_clipboard">Valor copiado al portapapeles</string>
     <string name="please_select_currency">Elija una moneda</string>
     <string name="error_no_internet">Error: Por favor compruebe su conexión</string>
+    <string name="select_a_currency">Seleccione una moneda</string>
 </resources>

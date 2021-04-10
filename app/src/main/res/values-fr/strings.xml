@@ -5,4 +5,5 @@
     <string name="value_copied_clipboard">Valeur copiée dans le presse-papiers</string>
     <string name="please_select_currency">s\'il vous plaît, sélectionnez une devise</string>
     <string name="error_no_internet">Erreur: pas de connexion Internet</string>
+    <string name="select_a_currency">Sélectionnez une devise</string>
 </resources>

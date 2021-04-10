@@ -13,4 +13,5 @@
         <item>MXN</item>
     </string-array>
     <string name="error_no_internet">Error: No internet connection</string>
+    <string name="select_a_currency">Select a currency</string>
 </resources>
