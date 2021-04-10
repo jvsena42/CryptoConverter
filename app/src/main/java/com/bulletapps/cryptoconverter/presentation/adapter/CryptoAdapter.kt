@@ -63,10 +63,12 @@ class CryptoAdapter:RecyclerView.Adapter<CryptoAdapter.NewsViewHolder>() {
                     value = amount/ crypto.mxn!!
                 }
             }
-//            value = "%.2f".format(value).toDouble()
-            binding.tvValue.text = "%,8f".format(value).replace(",",".",true)
+
+            val valueString = "%,8f".format(value).replace(",",".",true)
+
+            binding.tvValue.text = valueString
             binding.btCopy.setOnClickListener {
-                mListener.onClick(value.toString())
+                mListener.onClick(valueString)
             }
             binding.tvAbbreviation.text = crypto.abbreviation
         }
